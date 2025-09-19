@@ -1,0 +1,17 @@
+# Build artifacts
+build/
+*.o
+*.obj
+*.dll
+*.dylib
+*.so
+
+# Binaries
+tcp-ip
+
+# Node/Bun
+node_modules/
+
+# macOS
+.DS_Store
+

@@ -1,0 +1,16 @@
+{
+  "name": "js-server-on-c",
+  "version": "1.0.1",
+  "description": "A minimal HTTP server implemented in C and controlled from Bun via FFI.",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "bun server.js",
+    "build:mac": "clang -O2 -pthread -dynamiclib -o tcp-ip.dylib tcp-ip.c",
+    "build:linux": "cc -O2 -pthread -shared -fPIC -o tcp-ip.so tcp-ip.c",
+    "build": "uname | grep -qi darwin && bun run build:mac || bun run build:linux"
+  },
+  "keywords": ["bun", "ffi", "c", "http"],
+  "author": "",
+  "license": "MIT"
+}
